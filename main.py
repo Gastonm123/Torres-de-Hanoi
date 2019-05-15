@@ -36,6 +36,8 @@ class Juego:
         self.piezas[pieza-1] = torreMover
         if self.graficador:
             self.graficador.graf(self)
+        else:
+            mostrar(self)
 
         #recobrar el estado de la recursion poniendo la pieza que antes movi arriba mio
         if pieza > 1:

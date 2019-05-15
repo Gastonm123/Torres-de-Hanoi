@@ -16,6 +16,8 @@ class Juego:
             []
         ]
         self.piezas = [0 for i in range(nro_piezas)]
+        self.graficador = None
+        self.nro_piezas = nro_piezas
 
     def mover(self, pieza, torre, torreNegada=0):
         #conseguir la torre a la que lo voy a mover
@@ -32,7 +34,12 @@ class Juego:
         self.torres[torre].pop()
         self.torres[torreMover].append(pieza)
         self.piezas[pieza-1] = torreMover
-        
+        if self.graficador:
+            self.graficador.graf(self)
+
         #recobrar el estado de la recursion poniendo la pieza que antes movi arriba mio
         if pieza > 1:
             self.mover(pieza-1, self.piezas[pieza-2], torre)
+
+    def setGraficador(self, graficador):
+        self.graficador = graficador

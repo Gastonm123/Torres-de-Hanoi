@@ -1,5 +1,6 @@
 from __future__ import print_function
 from main import Juego
+from graficador import Graficador
 
 def mostrar(juego):
     for i, torre in enumerate(juego.torres):
@@ -8,10 +9,12 @@ def mostrar(juego):
             print(str(pieza), end=', ') 
         print('')
 
-    
-piezas = 20
+g = Graficador()    
+piezas = 7
 miJuego = Juego(piezas)
+miJuego.setGraficador(g)
 
-mostrar(miJuego)
+g.graf(miJuego)
 miJuego.mover(piezas, 0)
-mostrar(miJuego)
+while(1):
+    g.graf(miJuego)

@@ -1,7 +1,7 @@
 from main import Juego
 from graficador import Graficador
 
-g = Graficador()    
+g = Graficador()
 piezas = 7
 miJuego = Juego(piezas)
 miJuego.setGraficador(g)

@@ -5,7 +5,7 @@ def mostrar(juego):
     for i, torre in enumerate(juego.torres):
         print('Torre ' + str(i) + ': ', end='')
         for pieza in torre:
-            print(str(pieza), end=', ') 
+            print(str(pieza), end=', ')
         print('')
 
 class Juego:
@@ -29,7 +29,7 @@ class Juego:
         #mover la pieza de encima a otro lugar que no sea donde me voy a mover
         if pieza > 1:
             self.mover(pieza-1, torre, torreMover)
-        
+
         #moverme
         self.torres[torre].pop()
         self.torres[torreMover].append(pieza)
